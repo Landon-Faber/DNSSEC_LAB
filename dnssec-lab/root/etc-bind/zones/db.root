@@ -1,0 +1,8 @@
+$TTL 3600
+$ORIGIN .
+@                       IN  SOA   ns.root.        admin.root. ( 2026071804 3600 900 604800 3600 )
+@                       IN  NS    ns.root.
+ns.root.                IN  A     10.0.0.1
+lab.                    IN  NS    ns.lab.
+ns.lab.                 IN  A     10.0.4.1
+lab.			IN DS 13565 13 2 5F455859F40352426B65FB9D049C5BA466C22D90B7DAEA2730C5E007D9F5B66F

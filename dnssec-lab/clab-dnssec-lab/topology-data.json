@@ -1,0 +1,394 @@
+{
+  "name": "dnssec-lab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-58c7a1410c4e",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "auth": {
+      "index": "0",
+      "shortname": "auth",
+      "longname": "clab-dnssec-lab-auth",
+      "fqdn": "auth.dnssec-lab.io",
+      "group": "",
+      "labdir": "/home/landon/dnssec-lab/clab-dnssec-lab/auth",
+      "kind": "linux",
+      "image": "internetsystemsconsortium/bind9:9.18",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-58c7a1410c4e",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/landon/dnssec-lab/clab-dnssec-lab/auth",
+        "clab-node-longname": "clab-dnssec-lab-auth",
+        "clab-node-name": "auth",
+        "clab-node-type": "",
+        "clab-owner": "landon",
+        "clab-topo-file": "/home/landon/dnssec-lab/dnssec-lab.clab.yml",
+        "containerlab": "dnssec-lab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 953,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "udp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 853,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "client": {
+      "index": "1",
+      "shortname": "client",
+      "longname": "clab-dnssec-lab-client",
+      "fqdn": "client.dnssec-lab.io",
+      "group": "",
+      "labdir": "/home/landon/dnssec-lab/clab-dnssec-lab/client",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-58c7a1410c4e",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/landon/dnssec-lab/clab-dnssec-lab/client",
+        "clab-node-longname": "clab-dnssec-lab-client",
+        "clab-node-name": "client",
+        "clab-node-type": "",
+        "clab-owner": "landon",
+        "clab-topo-file": "/home/landon/dnssec-lab/dnssec-lab.clab.yml",
+        "containerlab": "dnssec-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "resolver": {
+      "index": "2",
+      "shortname": "resolver",
+      "longname": "clab-dnssec-lab-resolver",
+      "fqdn": "resolver.dnssec-lab.io",
+      "group": "",
+      "labdir": "/home/landon/dnssec-lab/clab-dnssec-lab/resolver",
+      "kind": "linux",
+      "image": "internetsystemsconsortium/bind9:9.18",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-58c7a1410c4e",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/landon/dnssec-lab/clab-dnssec-lab/resolver",
+        "clab-node-longname": "clab-dnssec-lab-resolver",
+        "clab-node-name": "resolver",
+        "clab-node-type": "",
+        "clab-owner": "landon",
+        "clab-topo-file": "/home/landon/dnssec-lab/dnssec-lab.clab.yml",
+        "containerlab": "dnssec-lab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "udp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 853,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 953,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "root": {
+      "index": "3",
+      "shortname": "root",
+      "longname": "clab-dnssec-lab-root",
+      "fqdn": "root.dnssec-lab.io",
+      "group": "",
+      "labdir": "/home/landon/dnssec-lab/clab-dnssec-lab/root",
+      "kind": "linux",
+      "image": "internetsystemsconsortium/bind9:9.18",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-58c7a1410c4e",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/landon/dnssec-lab/clab-dnssec-lab/root",
+        "clab-node-longname": "clab-dnssec-lab-root",
+        "clab-node-name": "root",
+        "clab-node-type": "",
+        "clab-owner": "landon",
+        "clab-topo-file": "/home/landon/dnssec-lab/dnssec-lab.clab.yml",
+        "containerlab": "dnssec-lab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "udp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 853,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 953,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "tld": {
+      "index": "4",
+      "shortname": "tld",
+      "longname": "clab-dnssec-lab-tld",
+      "fqdn": "tld.dnssec-lab.io",
+      "group": "",
+      "labdir": "/home/landon/dnssec-lab/clab-dnssec-lab/tld",
+      "kind": "linux",
+      "image": "internetsystemsconsortium/bind9:9.18",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-58c7a1410c4e",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/landon/dnssec-lab/clab-dnssec-lab/tld",
+        "clab-node-longname": "clab-dnssec-lab-tld",
+        "clab-node-name": "tld",
+        "clab-node-type": "",
+        "clab-owner": "landon",
+        "clab-topo-file": "/home/landon/dnssec-lab/dnssec-lab.clab.yml",
+        "containerlab": "dnssec-lab"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "udp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 853,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 953,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "root",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:2e:df:af",
+          "peer": "z"
+        },
+        "z": {
+          "node": "tld",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:39:02:f1",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "tld",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:d4:74:af",
+          "peer": "z"
+        },
+        "z": {
+          "node": "auth",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:3c:9e:c8",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "root",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:c8:33:24",
+          "peer": "z"
+        },
+        "z": {
+          "node": "resolver",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:97:b2:dd",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "tld",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:a3:80:cd",
+          "peer": "z"
+        },
+        "z": {
+          "node": "resolver",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:96:24:c5",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "auth",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:38:a8:64",
+          "peer": "z"
+        },
+        "z": {
+          "node": "resolver",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:16:44:73",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "resolver",
+          "interface": "eth4",
+          "mac": "aa:c1:ab:50:c8:b8",
+          "peer": "z"
+        },
+        "z": {
+          "node": "client",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:ea:4a:d4",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

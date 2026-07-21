@@ -1,0 +1,74 @@
+; File written on Fri Jul 17 17:11:10 2026
+; dnssec-signzone version 9.20.18-1ubuntu2.1-Ubuntu
+lab.			3600	IN SOA	ns.lab. admin.lab. (
+					2026071802 ; serial
+					3600       ; refresh (1 hour)
+					900        ; retry (15 minutes)
+					604800     ; expire (1 week)
+					3600       ; minimum (1 hour)
+					)
+			3600	RRSIG	SOA 13 1 3600 (
+					20260816201110 20260717201110 7082 lab.
+					qvmEeTudAQB40A60sANV8jF/WokQJMmBSRXP
+					RWzX86/2a3CPBvKT7jSct8vip+tjBQ8ZbNNB
+					CdNwZjQCYsX+IQ== )
+			3600	NS	ns.lab.
+			3600	RRSIG	NS 13 1 3600 (
+					20260816201110 20260717201110 7082 lab.
+					TlHy0lfNTc0Q+qzW20l7yPklJfnckv6A8813
+					JDOlkrmFJ72LQdjqSPBa9DDyXaclgy6nzWJi
+					iDsFzHtRNmHFzw== )
+			3600	NSEC	example.lab. NS SOA RRSIG NSEC DNSKEY
+			3600	RRSIG	NSEC 13 1 3600 (
+					20260816201110 20260717201110 7082 lab.
+					gxaCXAaHiGwojFhnNBLitdrgnd/ewnfy0l7J
+					6Ostt/SZA686njiryWf4auYFEuEPEhILnGkW
+					LbCghcYHdBlyEA== )
+			3600	DNSKEY	256 3 13 (
+					q8VV8LzW+y664BgUm4v4ADYimjBcg2KI3BGg
+					Q8V2QkTu94TDk8EjmNSyQg+nS/mK55Myu3hW
+					YNa9qcxpm5XoHQ==
+					) ; ZSK; alg = ECDSAP256SHA256 ; key id = 7082
+			3600	DNSKEY	257 3 13 (
+					Pw08xFukAETa7JsN23uRK4KTPxOfLU2GmNpb
+					JCqZlCUS8Ptw7EkUfjerNrAKECt6vjMktOi/
+					mXjCXL61OMBDeQ==
+					) ; KSK; alg = ECDSAP256SHA256 ; key id = 13565
+			3600	RRSIG	DNSKEY 13 1 3600 (
+					20260816201110 20260717201110 7082 lab.
+					RMWq/2kQPOZxSWr0bDXpcBaS8hl14D0NOxBu
+					4fxQfjR5+dUrmJMP8iaTmICTTDaM8Y8iriul
+					J2zuNiJHUVCumA== )
+			3600	RRSIG	DNSKEY 13 1 3600 (
+					20260816201110 20260717201110 13565 lab.
+					FC6iQyJJ1DlYUXGhI6XdVKqU2WOFDxRgbQuU
+					A8aXXbMhyDFCEkn5Qvs4O8efOisNXxIBkREN
+					/0I7odhZT6jmCQ== )
+example.lab.		3600	IN NS	ns.example.lab.
+			3600	DS	40734 13 2 (
+					8ECF1E77BB324B43739F0B7C082785877F35
+					66D0A061E40577EB88F98C983622 )
+			3600	RRSIG	DS 13 2 3600 (
+					20260816201110 20260717201110 7082 lab.
+					vriPV+gc1uP2Vlc8nEtKw0OqV+VLI04QZskJ
+					qCFdms5QhyfQF2EXFA6mQyxM28Ib8rJ5FmJ1
+					F2o+hx8g4ZVf4A== )
+			3600	NSEC	ns.lab. NS DS RRSIG NSEC
+			3600	RRSIG	NSEC 13 2 3600 (
+					20260816201110 20260717201110 7082 lab.
+					Y5Pfq0pfPj6AQoNfid0NoKhvdH29qSz+nreA
+					8cp27R6wvk9LB7tbKNOgn9/vTRyRs9XDGZa3
+					qWBATLz3yG6PFQ== )
+ns.example.lab.		3600	IN A	10.0.5.1
+ns.lab.			3600	IN A	10.0.4.1
+			3600	RRSIG	A 13 2 3600 (
+					20260816201110 20260717201110 7082 lab.
+					3wQWxFap38K+tOtkKKe0xGfwsTBKMAnmmkfD
+					Vw1YplZ+NqwSzREhwTs/WJx27gtNU075oaPL
+					/wNximwaHE7e6w== )
+			3600	NSEC	lab. A RRSIG NSEC
+			3600	RRSIG	NSEC 13 2 3600 (
+					20260816201110 20260717201110 7082 lab.
+					M8YlP8MBMQJ04bBQslAD0EWDLWRuyT6suCUD
+					h6xPBFJKBUDocGTDcBCI6fUJYtnesldKWUoE
+					Vz2s/D0PSx/r0w== )
