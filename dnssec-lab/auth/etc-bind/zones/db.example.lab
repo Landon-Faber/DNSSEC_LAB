@@ -1,0 +1,7 @@
+$TTL 3600
+example.lab.            IN  SOA   ns.example.lab. admin.example.lab. ( 2026071802 3600 900 604800 3600 )
+example.lab.            IN  NS    ns.example.lab.
+ns.example.lab. IN A 10.0.5.1
+www.example.lab.        IN  A     10.0.0.3
+$INCLUDE Kexample.lab.+013+40734.key
+$INCLUDE Kexample.lab.+013+25086.key

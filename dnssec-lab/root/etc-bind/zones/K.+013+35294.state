@@ -1,0 +1,19 @@
+; This is the state of key 35294, for .
+Algorithm: 13
+Length: 256
+Lifetime: 0
+KSK: yes
+ZSK: yes
+Generated: 20260717215602 (Fri Jul 17 21:56:02 2026)
+Published: 20260717215602 (Fri Jul 17 21:56:02 2026)
+Active: 20260717215602 (Fri Jul 17 21:56:02 2026)
+PublishCDS: 20260718230102 (Sat Jul 18 23:01:02 2026)
+DNSKEYChange: 20260720132558 (Mon Jul 20 13:25:58 2026)
+ZRRSIGChange: 20260720132558 (Mon Jul 20 13:25:58 2026)
+KRRSIGChange: 20260720132558 (Mon Jul 20 13:25:58 2026)
+DSChange: 20260720132558 (Mon Jul 20 13:25:58 2026)
+DNSKEYState: omnipresent
+ZRRSIGState: omnipresent
+KRRSIGState: omnipresent
+DSState: rumoured
+GoalState: omnipresent

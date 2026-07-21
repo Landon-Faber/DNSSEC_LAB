@@ -1,0 +1,9 @@
+$TTL 3600
+lab.                    IN  SOA   ns.lab.         admin.lab. ( 2026071802 3600 900 604800 3600 )
+lab.                    IN  NS    ns.lab.
+ns.lab. IN A 10.0.4.1
+example.lab.            IN  NS    ns.example.lab.
+ns.example.lab. IN A 10.0.5.1
+example.lab.		IN DS 40734 13 2 8ECF1E77BB324B43739F0B7C082785877F3566D0A061E40577EB88F98C983622
+$INCLUDE Klab.+013+13565.key
+$INCLUDE Klab.+013+07082.key

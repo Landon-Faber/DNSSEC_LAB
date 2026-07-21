@@ -1,0 +1,26 @@
+---
+auth:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.5
+client:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.6
+resolver:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.2
+root:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.3
+tld:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.4
