@@ -1,6 +1,6 @@
 ## 1. Learning Objectives
 ### By the end of this module, students will be able to:
- Explain why DNSSEC was created and what security problem it solves (and does not solve).
+- Explain why DNSSEC was created and what security problem it solves (and does not solve).
 - Describe the chain of trust from the root zone down to an individual DNS record.
 - Distinguish the roles of the KSK, ZSK, DNSKEY, RRSIG, and DS records.
 - Trace a DNSSEC validation and classify its outcome as Secure, Insecure, Bogus, or Indeterminate.
@@ -29,3 +29,11 @@ DNSSEC addresses this gap. It is important to be precise about what it does and 
 - It DOES let a resolver detect if a response was forged or tampered with, and refuse to use it.
 - It does NOT encrypt DNS traffic; queries and responses are still visible to anyone observing the network (that problem is instead addressed by separate protocols such as DNS-over-TLS or DNS-over-HTTPS).
 - It does NOT protect availability; DNSSEC does not stop denial-of-service attacks against name servers.
+## 4. How the Chain of Trust Works
+Within a single zone, two key pairs cooperate:
+- The ZSK's private key signs the zone's RRsets (A, AAAA, MX, etc.), producing RRSIG records.
+- The KSK's private key signs the DNSKEY RRset itself (which contains the public ZSK and public KSK), producing an RRSIG over the keys.
+- The zone's operator hashes the public KSK and gives that hash to the parent zone, which publishes it as a DS record and signs it with the parent's own ZSK.
+- This repeats one level up at a time, child to parent to grandparent, until the resolver reaches the root zone.
+- The root zone's KSK is self-signed. It cannot be verified by any parent, so it is instead trusted directly: it is the trust anchor, distributed out-of-band to every validating resolver and vouched for publicly through the DNSSEC Root Signing Ceremony.
+A resolver validating a record, therefore, does not just check one signature; it walks the entire chain, verifying at every step that each zone's DS record hash matches the actual KSK the child zone presents, and that every RRSIG is valid and within its signature validity window.
