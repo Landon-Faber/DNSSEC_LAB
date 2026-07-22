@@ -1,0 +1,60 @@
+name: dnssec-lab
+topology:
+  nodes:
+    root:
+      kind: linux
+      image: internetsystemsconsortium/bind9:9.18
+      binds:
+        - ./root/etc-bind:/etc/bind
+      entrypoint: "/usr/sbin/named"
+      cmd: "-g -c /etc/bind/named.conf"
+      exec:
+        - ip addr add 10.0.1.1/30 dev eth1
+        - ip addr add 10.0.2.1/30 dev eth2
+    tld:
+      kind: linux
+      image: internetsystemsconsortium/bind9:9.18
+      binds:
+        - ./tld/etc-bind:/etc/bind
+      entrypoint: "/usr/sbin/named"
+      cmd: "-g -c /etc/bind/named.conf"
+      exec:
+        - ip addr add 10.0.1.2/30 dev eth1
+        - ip addr add 10.0.3.1/30 dev eth2
+        - ip addr add 10.0.4.1/30 dev eth3
+    auth:
+      kind: linux
+      image: internetsystemsconsortium/bind9:9.18
+      binds:
+        - ./auth/etc-bind:/etc/bind
+      entrypoint: "/usr/sbin/named"
+      cmd: "-g -c /etc/bind/named.conf"
+      exec:
+        - ip addr add 10.0.3.2/30 dev eth1
+        - ip addr add 10.0.5.1/30 dev eth2
+    resolver:
+      kind: linux
+      image: internetsystemsconsortium/bind9:9.18
+      binds:
+        - ./resolver/etc-bind:/etc/bind
+      entrypoint: "/usr/sbin/named"
+      cmd: "-g -c /etc/bind/named.conf"
+      exec:
+        - ip addr add 10.0.2.2/30 dev eth1
+        - ip addr add 10.0.4.2/30 dev eth2
+        - ip addr add 10.0.5.2/30 dev eth3
+        - ip addr add 10.0.6.1/30 dev eth4
+    client:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - apk add --no-cache bind-tools
+        - ip addr add 10.0.6.2/30 dev eth1
+
+  links:
+    - endpoints: ["root:eth1", "tld:eth1"]
+    - endpoints: ["tld:eth2", "auth:eth1"]
+    - endpoints: ["root:eth2", "resolver:eth1"]
+    - endpoints: ["tld:eth3", "resolver:eth2"]
+    - endpoints: ["auth:eth2", "resolver:eth3"]
+    - endpoints: ["resolver:eth4", "client:eth1"]
