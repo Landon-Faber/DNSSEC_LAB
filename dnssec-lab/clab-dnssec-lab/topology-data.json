@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clab",
-        "bridge": "br-b5e3dba2fcfd",
+        "bridge": "br-797b1f094e39",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "ipv6-subnet": "3fff:172:20:20::/64",
@@ -29,13 +29,13 @@
       "image": "internetsystemsconsortium/bind9:9.18",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-address": "172.20.20.4",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-b5e3dba2fcfd",
+        "clab-mgmt-net-bridge": "br-797b1f094e39",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/workspaces/DNSSEC_LAB/dnssec-lab/clab-dnssec-lab/auth",
@@ -47,18 +47,6 @@
         "containerlab": "dnssec-lab"
       },
       "port-bindings": [
-        {
-          "host-ip": "",
-          "host-port": 0,
-          "port": 53,
-          "protocol": "tcp"
-        },
-        {
-          "host-ip": "",
-          "host-port": 0,
-          "port": 53,
-          "protocol": "udp"
-        },
         {
           "host-ip": "",
           "host-port": 0,
@@ -76,6 +64,18 @@
           "host-port": 0,
           "port": 443,
           "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "udp"
         }
       ]
     },
@@ -90,13 +90,13 @@
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-address": "172.20.20.3",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-b5e3dba2fcfd",
+        "clab-mgmt-net-bridge": "br-797b1f094e39",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/workspaces/DNSSEC_LAB/dnssec-lab/clab-dnssec-lab/client",
@@ -121,13 +121,13 @@
       "image": "internetsystemsconsortium/bind9:9.18",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-address": "172.20.20.5",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-b5e3dba2fcfd",
+        "clab-mgmt-net-bridge": "br-797b1f094e39",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/workspaces/DNSSEC_LAB/dnssec-lab/clab-dnssec-lab/resolver",
@@ -182,13 +182,13 @@
       "image": "internetsystemsconsortium/bind9:9.18",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-address": "172.20.20.6",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-b5e3dba2fcfd",
+        "clab-mgmt-net-bridge": "br-797b1f094e39",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/workspaces/DNSSEC_LAB/dnssec-lab/clab-dnssec-lab/root",
@@ -200,12 +200,6 @@
         "containerlab": "dnssec-lab"
       },
       "port-bindings": [
-        {
-          "host-ip": "",
-          "host-port": 0,
-          "port": 953,
-          "protocol": "tcp"
-        },
         {
           "host-ip": "",
           "host-port": 0,
@@ -228,6 +222,12 @@
           "host-ip": "",
           "host-port": 0,
           "port": 853,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 953,
           "protocol": "tcp"
         }
       ]
@@ -243,13 +243,13 @@
       "image": "internetsystemsconsortium/bind9:9.18",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-address": "172.20.20.2",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-b5e3dba2fcfd",
+        "clab-mgmt-net-bridge": "br-797b1f094e39",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/workspaces/DNSSEC_LAB/dnssec-lab/clab-dnssec-lab/tld",
@@ -261,18 +261,6 @@
         "containerlab": "dnssec-lab"
       },
       "port-bindings": [
-        {
-          "host-ip": "",
-          "host-port": 0,
-          "port": 443,
-          "protocol": "tcp"
-        },
-        {
-          "host-ip": "",
-          "host-port": 0,
-          "port": 53,
-          "protocol": "tcp"
-        },
         {
           "host-ip": "",
           "host-port": 0,
@@ -290,6 +278,18 @@
           "host-port": 0,
           "port": 953,
           "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 53,
+          "protocol": "tcp"
         }
       ]
     }
@@ -299,13 +299,13 @@
       "a": {
         "node": "root",
         "interface": "eth1",
-        "mac": "aa:c1:ab:c1:53:74",
+        "mac": "aa:c1:ab:62:6b:6f",
         "peer": "z"
       },
       "z": {
         "node": "tld",
         "interface": "eth1",
-        "mac": "aa:c1:ab:9d:bb:67",
+        "mac": "aa:c1:ab:d7:2b:03",
         "peer": "a"
       }
     },
@@ -313,13 +313,13 @@
       "a": {
         "node": "tld",
         "interface": "eth2",
-        "mac": "aa:c1:ab:dc:95:6e",
+        "mac": "aa:c1:ab:f2:18:cc",
         "peer": "z"
       },
       "z": {
         "node": "auth",
         "interface": "eth1",
-        "mac": "aa:c1:ab:66:dc:f9",
+        "mac": "aa:c1:ab:68:ed:b3",
         "peer": "a"
       }
     },
@@ -327,13 +327,13 @@
       "a": {
         "node": "root",
         "interface": "eth2",
-        "mac": "aa:c1:ab:50:98:ba",
+        "mac": "aa:c1:ab:7e:32:3d",
         "peer": "z"
       },
       "z": {
         "node": "resolver",
         "interface": "eth1",
-        "mac": "aa:c1:ab:5a:28:31",
+        "mac": "aa:c1:ab:53:1d:b4",
         "peer": "a"
       }
     },
@@ -341,13 +341,13 @@
       "a": {
         "node": "tld",
         "interface": "eth3",
-        "mac": "aa:c1:ab:3f:06:f9",
+        "mac": "aa:c1:ab:76:6c:ae",
         "peer": "z"
       },
       "z": {
         "node": "resolver",
         "interface": "eth2",
-        "mac": "aa:c1:ab:8b:37:de",
+        "mac": "aa:c1:ab:34:9e:e0",
         "peer": "a"
       }
     },
@@ -355,13 +355,13 @@
       "a": {
         "node": "auth",
         "interface": "eth2",
-        "mac": "aa:c1:ab:ef:2a:30",
+        "mac": "aa:c1:ab:8a:f5:88",
         "peer": "z"
       },
       "z": {
         "node": "resolver",
         "interface": "eth3",
-        "mac": "aa:c1:ab:cc:2b:cf",
+        "mac": "aa:c1:ab:a0:98:88",
         "peer": "a"
       }
     },
@@ -369,13 +369,13 @@
       "a": {
         "node": "resolver",
         "interface": "eth4",
-        "mac": "aa:c1:ab:e2:55:87",
+        "mac": "aa:c1:ab:da:6f:2f",
         "peer": "z"
       },
       "z": {
         "node": "client",
         "interface": "eth1",
-        "mac": "aa:c1:ab:af:b8:4a",
+        "mac": "aa:c1:ab:cb:b9:55",
         "peer": "a"
       }
     }
