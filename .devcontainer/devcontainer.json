@@ -1,11 +1,9 @@
 {
     "name": "DNSSEC containerlab",
-    "image": "ghcr.io/srl-labs/containerlab/devcontainer:latest",
+    "image": "ghcr.io/srl-labs/containerlab/devcontainer-dind-slim:0.68.0",
     "hostRequirements": { "cpus": 2, "memory": "8gb" },
-    "privileged": true,
-    "runArgs": [
-        "--privileged"
-    ],
-    "postCreateCommand": "docker pull internetsystemsconsortium/bind9:9.18 && docker pull alpine:latest",
-    "postStartCommand": "cd dnssec-lab && sudo containerlab deploy -t dnssec-lab.clab.yml || true"
+
+    "postCreateCommand": "pip install pyshark lxml nest_asyncio && docker pull internetsystemsconsortium/bind9:9.18 && docker pull alpine:latest",
+
+    "postStartCommand": "sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y tshark && cd dnssec-lab && sudo containerlab deploy -t dnssec-lab.clab.yml || true"
 }
