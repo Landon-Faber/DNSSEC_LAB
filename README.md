@@ -4,23 +4,29 @@ Module in creation to explain the fundamental terms of DNSSEC, how it works, wha
 
 ## Running the Lab in GitHub Codespaces
 
-This repo includes a containerlab topology (root → tld → auth → resolver → client) that simulates a full DNSSEC chain of trust using BIND9.
+This repo includes:
+- A Jupyter Notebook to analyze DNSSEC Wireshark captures.
+- A containerlab topology (root → tld → auth → resolver → client) that simulates a full DNSSEC chain of trust using BIND9.
+
 
 ### Start
 
 1. On the **`container`** branch, click **Code → Codespaces → Create codespace on container**.
 2. Wait for the container to build. The lab deploys automatically via `postStartCommand`.
-3. Verify it's up:
+3. For task 1, open the task-1.ipynb and follow setup instructions
+4. For task-2, Verify it's up:
    ```bash
    sudo containerlab inspect -t dnssec-lab/dnssec-lab.clab.yml
    ```
    You should see 5 running nodes: `root`, `tld`, `auth`, `resolver`, `client`.
-
+5. If not running run:
+```bash
+sudo containerlab deploy -t dnssec-lab.clab.yml
+```
 ### Try it out
 
 ```bash
-docker exec -it clab-dnssec-lab-client sh
-dig @10.0.6.1 example.lab A +dnssec
+docker exec -it clab-dnssec-lab-client delv @10.0.6.1 ns.example.lab +dnssec -a /etc/bind/root-trust-anchor.key
 ```
 Look for the `RRSIG` record in the answer, and the `ad` flag confirming the resolver validated the full chain.
 
