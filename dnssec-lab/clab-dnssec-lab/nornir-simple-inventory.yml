@@ -3,7 +3,7 @@ auth:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.3
+    hostname: 172.20.20.2
 client:
     username: 
     password: 
@@ -18,7 +18,7 @@ root:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.2
+    hostname: 172.20.20.3
 tld:
     username: 
     password: 
