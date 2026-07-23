@@ -47,6 +47,8 @@ topology:
     client:
       kind: linux
       image: alpine:latest
+      binds: 
+      - root/etc-bind/zones/root-trust-anchor.key:/etc/bind/root-trust-anchor.key:ro
       exec:
         - apk add --no-cache bind-tools
         - ip addr add 10.0.6.2/30 dev eth1
