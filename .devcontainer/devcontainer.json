@@ -3,5 +3,5 @@
     "image": "ghcr.io/srl-labs/containerlab/devcontainer-dind-slim:0.68.0",
     "hostRequirements": { "cpus": 2, "memory": "8gb" },
 
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y tshark && pip install pyshark lxml nest_asyncio && docker pull internetsystemsconsortium/bind9:9.18 && docker pull alpine:latest"
+    "postCreateCommand": "docker pull internetsystemsconsortium/bind9:9.18 && docker pull alpine:latest"
 }
