@@ -48,9 +48,9 @@ topology:
       kind: linux
       image: alpine:latest
       binds: 
-      - root/etc-bind/zones/root-trust-anchor.key:/etc/bind/root-trust-anchor.key:ro
+        - root/etc-bind/zones/root-trust-anchor.key:/etc/bind/root-trust-anchor.key:ro
       exec:
-        - apk add --no-cache bind-tools
+        - apk add --no-cache bind-tools bind
         - ip addr add 10.0.6.2/30 dev eth1
 
   links:
